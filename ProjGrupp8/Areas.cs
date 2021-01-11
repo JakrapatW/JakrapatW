@@ -4,8 +4,6 @@ namespace ProjGrupp8
 {
     public class Areas
     {
-        /* double area, volume, rectangle, triangle, cirkle, cube, pyramid, sphere; */
-        double[] areas = new double[6];
         public Areas()
         {
             MainMenu();
@@ -14,9 +12,9 @@ namespace ProjGrupp8
         {
             Console.Clear();
             Console.WriteLine("-- Areas & Volumes --\n");
-            /* En meny för Area och volym */
+            /* En meny för area och volym */
             bool inLoop = true;
-            float userInput;
+            int userInput;
 
             while (inLoop)
             {
@@ -28,18 +26,18 @@ namespace ProjGrupp8
                 Console.WriteLine("5. Pyramid");
                 Console.WriteLine("6. Return to main menu");
                 Console.Write("~ ");
-                if (float.TryParse(Console.ReadLine(), out userInput))
+                if (Int32.TryParse(Console.ReadLine(), out userInput))
                 {
                     switch (userInput)
                     {
                         case 1:
                             Console.Clear();
-                            areas[0] = Rectangle();
+                            Rectangle();
                             askContinue();
                             break;
                         case 2:
                             Console.Clear();
-                            areas[1] = Triangle();
+                            Triangle();
                             askContinue();
                             break;
                         case 3:
@@ -144,7 +142,7 @@ namespace ProjGrupp8
             Console.ReadKey();
             Console.WriteLine("\n");
         }
-        static double Checkinput(string a) // En metod som kollar av om användaren har skrivit in ett nummer eller float
+        static double Checkinput(string a) // En metod som kollar av om användaren har skrivit in ett nummer eller double
         {
             double v = 0;
             bool validate = false;
