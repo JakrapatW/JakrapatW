@@ -68,16 +68,5 @@ namespace ProjGrupp8
                 }
             }
         }
-        static float Checkinput() // En metod som kollar av om användaren har skrivit in ett nummer eller float
-        {
-            float v = 0;
-            bool validate = false;
-            while (!validate)
-            {
-                validate = float.TryParse(Console.ReadLine(), out v);
-                if (!validate) Console.Write("Please try again \n ~ ");
-            }
-            return v;
-        }
     }
 }
